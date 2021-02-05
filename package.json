@@ -1,11 +1,15 @@
 {
   "name": "@leon/root-config",
+  "license": "MIT",
+  "version": "0.0.1",
   "scripts": {
-    "start": "webpack serve --port 9000 --env isLocal",
+    "webpack:start": "webpack serve --port 9000 --env isLocal",
     "lint": "eslint src --ext js",
-    "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
+    "webpack:test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write \"./**\"",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "start": "node src/server.js",
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -40,6 +44,8 @@
     "webpack-merge": "^5.5.0"
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7",
     "single-spa": "^5.8.2"
   }
 }
